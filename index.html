@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Pinnacle Path to Online Success (PPOS) 2.0</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,200..700,0..1,-50..200" />
+  <style>
+        /* ===============================
+   BASE STYLES
+================================= */
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  background-color: #fff;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+    /* URGENCY BAR */
+    #live-counter-bar {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 1001;
+      border-bottom: 2px solid #ff4d4d;
+      font-size: 0.9rem;
+    }
+
+    /* SOCIAL PROOF POPUP */
+    #social-proof-popup {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: white;
+      color: #333;
+      padding: 12px 15px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      z-index: 9999;
+      border-left: 5px solid #4CAF50;
+      transition: all 0.5s ease-in-out;
+      width: 260px;
+    }
+    .popup-hidden { transform: translateX(-150%); opacity: 0; }
+    .popup-visible { transform: translateX(0); opacity: 1; }
+    .check-icon { 
+      background: #4CAF50; color: white; border-radius: 50%; 
+      min-width: 25px; height: 25px; display: flex; 
+      align-items: center; justify-content: center; margin-right: 12px; 
+    }
+    #popup-name { margin: 0; font-size: 0.9rem; }
+    #popup-text { margin: 0; font-size: 0.8rem; color: #666; }
+    #popup-time { font-size: 0.7rem; color: #999; }
+
+    /* REVIEW SECTION STYLES */
+    .review-grid { display: grid; gap: 20px; padding: 20px; max-width: 800px; margin: 0 auto; }
+    .review-card { background: #1a1a1a; border: 1px solid #333; border-radius: 15px; padding: 20px; color: #fff; }
+    .vic:hover {background: #ff4d4d;}
+    .review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .avatar { 
+        background: #ff4d4d; color: white; width: 45px; height: 45px; 
+        border-radius: 50%; display: flex; align-items: center; 
+        justify-content: center; font-weight: bold; font-size: 1.2rem; 
+    }
+    .stars { color: #ff4d4d; font-size: 0.8rem; margin-top: 4px; }
+    .review-content { line-height: 1.5; color: #ccc; font-size: 0.95rem; }
+
+/* ===============================
+   HERO SECTION
+==================================== */
+.hero {
+  background: rgba(0, 0, 0, 0.85) url("My Logo.jpg") no-repeat center center/cover;
+  color: #fff;
+  max-width: auto;
+  position: relative;
+  background-blend-mode: darken;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 50px 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: inline-block;
+}
+
+.hero p {
+  max-width: 600px;
+  font-size: 1.2rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: inline-block;
+  padding: 20px;
+  
+}
+
+/* button */
+.cta-btn {
+  margin: auto;
+  padding: 15px 40px;
+  border: none;
+  outline: none;
+  color: #FFF;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+}
+.cta-btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #000, #ff4d4d);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.cta-btn a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+/* glow */
+.cta-btn::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000,
+    #3c7a68, #00ff95
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 900%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height:  calc(100% + 4px);
+  filter: blur(7px);
+  animation: glowing 20s linear infinite;
+  transition: opacity .5s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
+
+/* hover */
+.cta-btn:hover::before {
+  opacity: 1;
+}
+
+.cta-btn:active:after {
+  background: transparent;
+}
+
+.cta-btn:active {
+  color: #000;
+  font-weight: bold;
+}
+
+/* ===============================
+   SECTIONS
+================================= */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.written-text{
+  color: white;
+}
+.step-item {
+  background: linear-gradient(90deg, #000, #ff4d4d);
+  border: 1px solid black;
+  padding: 25px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px #ff4d4d;
+}
+
+.step-item h3 {
+  margin-bottom: 0.8rem;
+}
+
+
+.section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #000, #ff4d4d);
+  transition: width 0.4s ease-in-out;
+}
+
+.section h2:hover::after {
+  width: 100%;
+}
+
+.section .lead {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #555;
+}
+
+/* ===============================
+   GRID LAYOUTS
+================================= */
+.featured-grid,
+.testimonial-grid,
+.gallery-grid,
+.module-grid {
+  display: grid;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: start;
+}
+
+.featured-grid,
+.testimonial-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.gallery-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.module-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* ===============================
+   IMAGE STYLES & EFFECTS
+================================= */
+.featured-item img,
+.testimonial-item img,
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Change to 50% for circular images */
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.featured-item img:hover,
+.testimonial-item img:hover,
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px #ff4d4d;
+}
+
+/* ===============================
+   MODULES
+================================= */
+.module {
+  background: linear-gradient(90deg, #000, #ff4d4d);
+  border: 1px solid black;
+  border-radius: 8px;
+  color: white;
+  padding: 25px;
+  transition: all 0.4s ease;
+}
+
+.module:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 25px #ff4d4d;
+}
+
+.motivation {
+  background: #000;
+  padding: 70px 20px;
+  border-radius: 10px;
+  margin: 40px auto;
+  max-width: 800px;
+  transition: all 0.3s ease;
+}
+
+.motivation:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px black;
+}
+
+#pricing {
+  background: linear-gradient(90deg, #fff 0%, #f8f8f8 100%);
+}
+
+.site-footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 25px 10px;
+  font-size: 0.9rem;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#backToTop:hover {
+  background: #ff4d4d;
+  color: #000;
+  transform: scale(1.1);
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 2;
+  transform: translateY(0);
+}
+
+.slide-in-left,
+.slide-in-right,
+.slide-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.write-text{
+  text-align: center;
+  font-family: cursive;
+}
+
+.greeting {
+    font-family: 'Georgia', serif;
+    font-size: 2.5em;
+    font-weight: 400;
+    margin-bottom: 40px;
+    
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+.rhetorical-question {
+    margin-bottom: 15px;
+    text-indent: -15px;
+    padding-left: 15px;
+}
+
+.miss-me {
+  margin:auto;
+    width: 80%;
+}
+
+.rhetorical-question-
+.bridge {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.continuation-section p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+.continuation-section {
+  width: 80%;
+  margin:auto;
+}
+
+.emphasis-line {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.small-indent {
+    margin-left: 20px;
+}
+.commission-pitch {
+    font-size: 1.3em;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.cta-lead {
+    font-weight: normal;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    margin-top: 40px;
+}
+
+.cta-core {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: blue;
+    margin-bottom: 5px;
+}
+
+.cta-blueprint {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+}
+
+.final-line {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+ body::selection {
+            background-color: blue;
+            color: orangered;
+}
+
+.module-why {
+  width: 80%;
+  margin:auto;
+}
+
+/* Dark Mode Body */
+    body.dark-mode {
+      background-color: #111;
+      color: #fff;
+    }
+
+    /* Fade transition */
+    body {
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+   
+    
+  </style>
+<body>  
+  <!-- HERO -->
+       <div id="live-counter-bar">
+    <span style="color: #4CAF50;"><span id="spots-claimed">72</span> / 200 spots claimed</span> — 
+    <span style="color: #ff4d4d;"><span id="spots-left">128</span> left</span>
+  </div>
+  <header class="hero fade-up" id="hero">
+    <span class="material-symbols-outlined" id="themeToggle">
+      light_mode
+    </span>
+    <div class="hero-content">
+      <h1>The Pinnacle Path to Online Success 2.0 </h1>
+      <p>The ultimate 2.0 blueprint for students and entrepreneurs to architect, automate, and scale a digital marketing business from scratch.</p>
+      <a href="https://selar.com/ppos2"><button class="cta-btn" onclick="shift()">Get Started</button></a>
+    </div>
+  </header>
+
+  <style>
+    body.dark-mode {
+      background-color: #111;
+      color: #fff;
+    }
+  #themeToggle{
+      font-size: 30px;
+      cursor: pointer;
+    }
+  </style>
+
+  <!-- FEATURED HIGHLIGHTS -->
+  <section id="highlights" class="section">
+    <h2>Featured Highlights</h2>
+    <p class="lead">These are SOME of the massive testimonials coming from students who learnt and implemented. This could be you one day if you put in the work.</p>
+
+    <div class="featured-grid">
+      <article class="featured-item slide-in-left">
+        <img src="Testimonial 6.jpg" alt="" />
+        <p>Earning 5 Million Naira is massively life-changing. This system is built for massive scaling and the conversion funnel simply delivers results i've never seen before.</p>
+      </article>
+
+      <article class="featured-item slide-in-up">
+        <img src="Testimonial 7.jpg" alt="" />
+        <p>It wasn't just one big win, it was several consistent victories. The commisions are great and the support is top-tier.</p>
+      </article>
+
+      <article class="featured-item slide-in-right">
+        <img src="Testimonial 12.jpg" alt="" />
+        <p>This business doesn't just offer a commision, they offer a lifestyle. The earning potential is truly unparalleled and just keeps getting better.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section">
+    <h2>What People Are Saying</h2>
+    <p class="lead">Real students, real results. Short testimonials that show transformation.</p>
+
+    <div class="testimonial-grid">
+      <article class="testimonial-item slide-in-left">
+        <img src="Testimonial 3.jpg" alt="Person 1">
+        <p class="quote">He never thought he could monetize his phone, but now he is!</p>
+        <p class="who">— Prosper, Student.</p>
+      </article>
+
+      <article class="testimonial-item slide-in-up">
+        <img src="Testimonial 2.jpg" alt="Person 2">
+        <p class="quote">Joining this platform was the best decision she made this year.</p>
+        <p class="who">— Margaret, 9–5 Worker.</p>
+      </article>
+
+      <article class="testimonial-item slide-in-right">
+        <img src="Testimonial 01.jpg" alt="Person 3">
+        <p class="quote">The strategies are simple and actionable. Highly recommend!</p>
+        <p class="who">— Esther, Student.</p>
+      </article>
+    </div>
+  </section>
+<div class="miss-me">
+   <h1 class="greeting">Dear friend,</h1>
+    <p class="hook">
+        Why settle for a fixed salary when you can master the art of automated sales?
+    </p>
+        <p class="rhetorical-question">
+            Why not learn how to transition from labor...
+        </p>
+        <p class="rhetorical-question">
+            ...To digital architectures by building systems that deliver  value and profit on autopilot.
+        </p>
+    <p class="bridge">
+        This isn't just a course; it's the blueprint to total financial independence.
+    </p>
+    <p class="closer">
+        It's time to upgrade your income potential!
+    </p>
+</div>
+
+<section style="background: #f9f9f9; padding: 50px 20px; text-align: center; color: #333; font-family: sans-serif;">
+    <h2 style="font-family: 'Dancing Script', cursive, serif; font-size: 2rem; color: #444; margin-bottom: 20px;">
+        But first, let me briefly introduce myself...
+    </h2>
+
+    <div style="width: 200px; height: 200px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; border: 5px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        <img src="well.jpeg" alt="Coach Profile" style="width: 100%; height: 135%; object-fit: cover; background: #ddd;">
+    </div>
+
+    <h1 style="font-size: 2.5rem; font-weight: 800; margin: 10px 0; color: #1a1a1a;">
+        My name is Wellington Chamberlain
+    </h1>
+
+    <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto 40px; line-height: 1.6;">
+        And I’m fortunate to be considered one of the best coaches by my students in the industry today..
+    </p>
+
+    <section id="highlights" class="section">
+    <h2>Some of my Favotite students</h2>
+    <div class="featured-grid">
+    <article class="featured-item slide-in-left">
+    <div style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">   
+        <article class="featured-item slide-in-left">
+        <div style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #eee;">
+            <img src="test1.jpeg" alt="Student Testimonial 1" style="width: 100%; display: block; background: #eee; min-height: 150px;">
+        </div>
+        </article>
+
+        <article class="featured-item slide-in-left">
+        <div style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #eee;">
+            <img src="test2.jpeg" alt="Student Testimonial 2" style="width: 100%; display: block; background: #eee; min-height: 150px;">
+        </div>
+        </article>
+        
+        <article class="featured-item slide-in-left">
+        <div style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #eee;">
+            <img src="test3.jpeg" alt="Student Testimonial 3" style="width: 100%; display: block; background: #eee; min-height: 150px;">
+        </div>
+        </article>
+    </div>
+  </div>
+  </section>
+</section>
+
+  <section style="background-color: #ffffff; padding: 30px 20px; color: #1a1a1a; line-height: 1.8; font-family: sans-serif; margin: 20px 0;">
+    <div style="max-width: 700px; margin: 0 auto;">
+        
+        <p style="margin-bottom: 15px; font-size: 1.1rem;">
+            If you check all the testimonials you see above, you’ll notice one common word that keeps coming up in all testimonials which is <span style="font-weight: bold;">PromptEarn</span>.
+        </p>
+        <h2 style="margin-bottom: 20px; font-size: 1.5rem; line-height: 1.4; color: #000;">
+            So what exactly is PromptEarn and why are all these millionaires talking about it?
+        </h2>
+        <p style="margin-bottom: 15px; font-weight: bold; font-size: 1.2rem;">Well,</p>
+        <p style="margin-bottom: 15px; font-size: 1.1rem;">
+            Promptearn is one of the fastest money-making platforms in Nigeria currently.
+        </p>
+        <p style="margin-bottom: 15px; font-size: 1.1rem;">
+            To succeed in this online business, you’ll need an account on PromptEarn.
+        </p>
+        <p style="margin-bottom: 15px; font-size: 1.1rem;">
+            PromptEarn is where the majority of your transactions will be taking place.
+        </p>
+        <p style="margin-bottom: 10px; font-size: 1.1rem;">
+            It is where you get access to all the hot-selling products that sells easily.
+        </p>
+        
+    </div>
+</section>
+
+
+  <div class="continuation-section">
+    <p>The truth most people overlook is that the top earners today didn't have a secret background or special connections.</p>
+
+    <p class="emphasis-line">They didn't have any ideal skill, they simply had the right system.</p>
+
+    <p class="emphasis-line">They turned their smartphones from distraction tools into high-performance income engines</p>
+
+    <p>You’re now one decision away from that same transformation.</p>
+
+    <p class="small-indent">By following the precise...</p>
+
+    <p class="commission-pitch">Automated steps inside the PPOS 2.0 Blueprint,</p>
+    <p>Even a complete beginner can bridge the gap from confusion to consistent sales.</p>
+
+    <p class="cta-core">
+        Everything becomes possible once you take the first step.
+    </p>
+  
+
+<section style="background: #1a1a1a; border: 2px solid #e91e63; border-radius: 20px; padding: 30px; margin: 40px 20px; color: #ffffff; font-family: sans-serif; box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);">
+  <img style="width: 100%; max-width: 600px; height: auto; margin: 0 auto; display: block;" src="PPOS 2,0.jpeg" alt="Person 3">
+  <h2 style="color: #e91e63; font-size: 1.8rem; margin-bottom: 15px; text-align: center; text-transform: uppercase; letter-spacing: 1px;">
+    What is the <span style="color: #fff;">PPOS 2.0</span> Blueprint?
+  </h2>
+  
+  <p style="line-height: 1.6; font-size: 1.05rem; color: #cccccc; margin-bottom: 20px;">
+    The <strong style="color: #fff;">Pinnacle Path to Online Success (PPOS) 2.0</strong> is a comprehensive, battle-tested framework engineered to help you transition from a manual hustler to a Digital Architect. This isn't just a guide; it is a full-scale business infrastructure designed for the modern entrepreneur. Inside the blueprint you get:
+  </p>
+
+  <ul style="list-style: none; padding: 0; margin-bottom: 25px;">
+    <li style="margin-bottom: 10px; display: flex; align-items: flex-start;">
+      <span style="color: #e91e63; margin-right: 10px;">✔</span> 
+      <span><b>The Automation Core:</b> Step-by-step guidance on building a sales journey that runs 24/7, from lead generation to secure product delivery.</span>
+    </li>
+    <li style="margin-bottom: 10px; display: flex; align-items: flex-start;">
+      <span style="color: #e91e63; margin-right: 10px;">✔</span> 
+      <span><b>The Traffic Engine: </b>Advanced strategies to command attention and drive sales using Facebook, Instagram, Tiktok & Google Ads.</span>
+    </li>
+    <li style="margin-bottom: 10px; display: flex; align-items: flex-start;">
+      <span style="color: #e91e63; margin-right: 10px;">✔</span> 
+      <span><b>The PPOS Command System:</b> Exclusive access to my private Telegram channel where i drop tested and trusted scripts & masterclass resources.</span>
+    </li>
+    <li style="margin-bottom: 10px; display: flex; align-items: flex-start;">
+      <span style="color: #e91e63; margin-right: 10px;">✔</span> 
+      <span><b>Elite Mentorship: </b>Direct entry into a private community of winners for real-time support, ensuring you never have to 'guess'
+      your next move.</span>    </li>
+  </ul>
+
+  <div style="text-align: center;">
+    <p style="font-size: 0.9rem; color: #888; margin-bottom: 10px; font-style: italic;">
+      Stop guessing. Start earning.
+    </p>
+    <a href="https://selar.com/ppos2" 
+       style="display: inline-block; background: #e91e63; color: #fff; padding: 18px 30px; font-size: 1.1rem; font-weight: bold; text-decoration: none; border-radius: 50px; box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4); transition: transform 0.2s;"
+       onmouseover="this.style.transform='scale(1.05)'" 
+       onmouseout="this.style.transform='scale(1)'"
+       onclick="shift()">
+       CLICK HERE TO GET THE PPOS COURSE NOW
+    </a>
+  </div>
+</section>
+
+ <!-- MOTIVATION -->
+  <section class="motivation section fade-up">
+    <h3 class="written-text">Believe in Your Digital Success Story</h3>
+    <p class="written-text">Every step you take brings you closer to financial freedom. Start now — your phone can either scroll or earn. Choose to build.</p>
+  </section>
+
+    <!-- EXTRA GALLERY -->
+  <section id="gallery" class="section">
+    <h2>More Success Stories</h2>
+    <p class="lead">Snapshots from students who applied the course and started earning.</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item slide-in-left"><img src="Testimonial 4.jpg" alt=""></div>
+      <div class="gallery-item slide-in-up"><img src="Testimonial 5.jpg" alt=""></div>
+      <div class="gallery-item slide-in-right"><img src="Testimonial 8.jpg" alt=""></div>
+
+      <div class="gallery-item slide-in-left"><img src="Testimonial 9.jpg" alt=""></div>
+      <div class="gallery-item slide-in-up"><img src="Testimonial 10.jpg" alt=""></div>
+      <div class="gallery-item slide-in-right"><img src="Testimonial 011.jpg" alt=""></div>
+    </div>
+  </section>
+
+
+<section style="background: #f4f4f4; border: 3px solid #000; border-radius: 10px; padding: 40px 20px; margin: 30px 15px; color: #333; font-family: sans-serif;">
+  <h2 style="color: #d90000; text-align: center; font-size: 1.8rem; line-height: 1.2; margin-bottom: 30px; text-transform: none;">
+    Now here's everything you'll be getting inside the <span style="color: #d90000;">PPOS</span> course if you make payment now:
+  </h2>
+
+  <div style="max-width: 600px; margin: 0 auto;">
+    <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+      <span style="color: #008000; font-size: 1.5rem; margin-right: 15px; font-weight: bold;">✔</span>
+      <p style="margin: 0; font-size: 1.1rem; line-height: 1.4;">
+        Access to my inner circle group chat for FREE <b>(₦5,000 Value)</b>
+      </p>
+    </div>
+
+    <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+      <span style="color: #008000; font-size: 1.5rem; margin-right: 15px; font-weight: bold;">✔</span>
+      <p style="margin: 0; font-size: 1.1rem; line-height: 1.4;">
+        Millionaire Mindset Hack Blueprint <b>(₦20,000 Value)</b>
+      </p>
+    </div>
+
+    <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+      <span style="color: #008000; font-size: 1.5rem; margin-right: 15px; font-weight: bold;">✔</span>
+      <p style="margin: 0; font-size: 1.1rem; line-height: 1.4;">
+        A one-year PromptEarn FREE account (Access to lots of products and tips) <b>(₦5,000 Value)</b>
+      </p>
+    </div>
+
+    <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+      <span style="color: #008000; font-size: 1.5rem; margin-right: 15px; font-weight: bold;">✔</span>
+      <p style="margin: 0; font-size: 1.1rem; line-height: 1.4;">
+        Access to my Telegram group where i drop scripts you an use to host your masterclasses <b>(₦10,000 Value)</b>
+      </p>
+    </div>
+
+    <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+      <span style="color: #008000; font-size: 1.5rem; margin-right: 15px; font-weight: bold;">✔</span>
+      <p style="margin: 0; font-size: 1.1rem; line-height: 1.4;">
+        The AUTOMATION blueprint where you learn how to make sales automatic even if you lose your phone <b>(₦25,000 Value)</b>
+      </p>
+    </div>
+
+    <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+      <span style="color: #008000; font-size: 1.5rem; margin-right: 15px; font-weight: bold;">✔</span>
+      <p style="margin: 0; font-size: 1.1rem; line-height: 1.4;">
+        Instant Facebook & Google Ads Hack <b>(₦12,000 Value)</b>
+      </p>
+    </div>
+
+    <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+      <span style="color: #008000; font-size: 1.5rem; margin-right: 15px; font-weight: bold;">✔</span>
+      <p style="margin: 0; font-size: 1.1rem; line-height: 1.4;">
+        Access to Video Editing & Graphic Designing programs <b>(₦18,000 Value)</b>
+      </p>
+    </div>
+
+    <h2 style="color: #008000; text-align: center; font-size: 1.8rem; line-height: 1.2; margin-bottom: 30px; text-transform: none;">
+    If you're to get all these seperately, you'll be spending a total sum of <span style="color: #d90000;">₦95,000</span>
+  </h2>
+
+  <p>
+    But as a member of the <span style="color: #e91e63;">PPOS 2.0</span> infrastructure, you get everything and more without spending half of that amount.
+  </p>
+  </div>
+</section>
+
+<section style="background-color: #111111; padding: 60px 20px; color: #ffffff; line-height: 1.8; font-family: sans-serif; text-align: center;">
+    <div style="max-width: 700px; margin: 0 auto;">
+
+        <h2 style="font-size: 2rem; margin-bottom: 30px; color: #fff;">So let me ask you a question;</h2>
+        <p style="margin-bottom: 20px;">If the <span style="color: #e91e63; font-weight: bold;">PPOS 2.0</span> blueprint finally:</p>
+        <p style="margin-bottom: 20px;">Help you rent a nice & very comfortable house of like 500k-1M yearly</p>
+        <p style="margin-bottom: 20px;">Help you buy a new car / pay your debt of millions... <span style="font-weight: bold;">Would It Be Worth It?</span></p>
+        <p style="margin-bottom: 20px;">Give You a monthly income of 100k. Would it Be Worth It?</p>
+        <p style="margin-bottom: 30px; font-size: 1.2rem;">If yes,</p>
+        <p style="margin-bottom: 30px;">How much will you be willing to invest to get such a life?</p>
+        <p style="margin-bottom: 15px; color: #888;">300k?</p>
+        <p style="margin-bottom: 15px; color: #888;">200k?</p>
+        <p style="margin-bottom: 15px; color: #888;">150k?</p>
+        <p style="margin-bottom: 30px; color: #888;">100k?</p>
+        <p style="margin-bottom: 25px; font-size: 1.1rem;">Well, I’m glad to tell you, you won’t be paying anything close to that.</p>
+        <p style="margin-bottom: 25px;">You won’t even be paying 50k to join the PPOS 2.0 program today.</p>
+        <p style="margin-bottom: 25px; font-weight: bold;">So how much do you have to invest?</p>
+
+        <h2 style="font-size: 2.2rem; margin-bottom: 30px;">
+            Well, you can get started today for <br>
+            <span style="color: #ff0000; font-size: 3rem; text-shadow: 0 0 10px rgba(255,0,0,0.2);">just ₦10,000</span>
+        </h2>
+
+        <p style="margin-bottom: 20px; font-weight: bold; font-size: 1.2rem;">Yes!</p>
+        <p style="margin-bottom: 20px;">With a one-time payment of <span style="color: #ff0000; font-weight: bold;">₦10,000</span>,</p>
+        <p style="margin-bottom: 20px;">you’ll get lifetime access to everything inside the PPOS 2.0 blueprint.</p>
+        <p style="margin-bottom: 40px;">All you have to do is click the link below to make payment and you’ll get access immediately.</p>
+
+        <div style="margin-bottom: 20px;">
+            <a href="https://selar.com/ppos2" 
+               style="display: inline-block; background-color: #ff0000; color: #ffffff; padding: 25px 50px; font-size: 1.8rem; font-weight: bold; text-decoration: none; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); border: 2px solid #fff; transition: transform 0.2s; width: 80%; max-width: 400px;"
+               onmouseover="this.style.transform='scale(1.05)'" 
+               onmouseout="this.style.transform='scale(1)'"
+               onclick="shift()">
+               Grant Me Access
+            </a>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.05); border: 1px dashed #e91e63; border-radius: 15px; padding: 20px; margin: 30px auto; max-width: 500px; display: flex; align-items: center; gap: 15px; text-align: left;">
+            <div style="font-size: 3rem;">🛡️</div>
+            <div>
+                <h4 style="margin: 0; color: #e91e63; font-size: 1.1rem;">100% Risk-Free Guarantee</h4>
+                <p style="margin: 5px 0 0; font-size: 0.9rem; color: #bbb; line-height: 1.4;">
+                    Your investment is protected. If you apply these steps and don't see results, I'll personally work with you until you do. No risk, all reward.
+                </p>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px; opacity: 0.8; border-top: 1px solid #333; padding-top: 15px;">
+    <p style="font-size: 0.75rem; color: #aaa; margin-bottom: 12px; letter-spacing: 1px;">
+        🔒 100% SECURE CHECKOUT & ENCRYPTED PAYMENT
+    </p>
+</div>
+    </div>
+</section>
+
+ <section id="gallery" class="section">
+    <h2>Other Testimonials</h2>
+    <p class="lead">Here are other PPOS course beneficiaries.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item slide-in-left"><img src="Testimonial 13.jpg" alt=""></div>
+      <div class="gallery-item slide-in-up"><img src="Testimonial 14.jpg" alt=""></div>
+      <div class="gallery-item slide-in-right"><img src="Testimonial 15.jpg" alt=""></div>
+
+      <div class="gallery-item slide-in-left"><img src="Testimonial 16.jpg" alt=""></div>
+      <div class="gallery-item slide-in-up"><img src="Testimonial 17.jpg" alt=""></div>
+      <div class="gallery-item slide-in-right"><img src="Testimonial 18.jpg" alt=""></div>
+    </div>
+  </section>
+
+     <section id="how-it-works" class="section fade-up">
+  <h2>How To Get Started 🚀</h2>
+  <p class="lead">Follow these three(3) simple steps to start earning online:</p>
+
+  <div class="steps-grid">
+    <div class="step-item slide-in-left">
+      <h3 class="written-text">1️⃣ Reach Out Directly</h3>
+      <p class="written-text">Send me a direct message saying "I'm Ready". That's the first step to joining the program and getting clarity on where you should start.</p>
+    </div>
+    <div class="step-item slide-in-up">
+      <h3 class="written-text">2️⃣ Recieve Your Beginner Blueprint</h3>
+      <p class="written-text">Once you've made your payment, you'll immediately gain access to a SIMPLE BEGINNER-FRIENDLY blueprint and everything you need to start the journey immediately.</p>
+    </div>
+    <div class="step-item slide-in-right">
+      <h3 class="written-text">3️⃣ Apply & Earn</h3>
+      <p class="written-text">Follow the tasks you're been given, have a positive mindset, create posts, and stay consistent. This is where the real results start pouring in.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- MODULES -->
+  <section id="modules" class="section">
+    <h2>The Highlight of the 2.0 Upgrade</h2>
+    <p class="lead">A step-by-step breakdown of the major things added to this course during the upgrade — practical lessons you can record and follow.</p>
+
+    <div class="module-grid">
+      <div class="module fade-up">
+        <h3>Module 1 – Introduction to the PPOS 2.0</h3>
+        <p>An entry into the 2.0 philosophy. How to BRIDGE the gap between the old way of digital marketing and the new automated standard.</p>
+      </div>
+
+      <div class="module fade-up">
+        <h3>Module 2 – The Digital Key System (PDF Creation)</h3>
+        <p>How to design and build your "Digital Key". How to MOVE away from messy links and creating a professional, branded PDF bridge that acts as the first gate to your digital product</p>
+      </div>
+
+      <div class="module fade-up">
+        <h3>Module 3 – The Product Launch (Creating The Interface)</h3>
+        <p>The technical setup. How to STRUCTURE your product hosting so it looks premium and functions perfectly on all devices.</p>
+      </div>
+
+      <div class="module fade-up">
+        <h3>Module 4 – The Automation Setuo (Selar's Automated Redirect)</h3>
+        <p>The "Ghost" mechanism. How to CONFIGURE the handshake between payment and delivery. The moment they pay, the system hands them the key.</p>
+      </div>
+
+      <div class="module fade-up">
+        <h3>Module 5 – The Manual Gate (Security & Permissions)</h3>
+        <p>The final layer of protection. How to MANAGE google drive permissions to ensure your intellectual property is never leaked or shared without your permission.</p>
+      </div>
+    </div>
+  </section>
+  <p class="module-why">
+  These modules are important because they fill the gaps that makes online marketing feel like a 9-5,</p><br>
+  <p class="module-why">Gaps that needs them to always be present to make a singke sale.</p><br>
+
+<p class="module-why">
+  They give you the clarity and direction you need to turn all that manual labor into a simple,
+  automated structure you can install with confidence.
+</p>
+
+ <section id="user-reviews" class="section">
+    <h2 style="text-align:center">Student Reviews</h2>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar">T</div>
+          <div>
+            <h4>Tolu Adeoye</h4>
+            <div class="stars">Lagos, Nigeria ⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+        <p class="review-content">Honestly I was skeptical because of how cheap the course is. But the value is insane. I now promote on Promptearn and made ₦120k last month without spending on ads. Highly recommend 🙌</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar">P</div>
+          <div>
+            <h4>Praise Gilberg</h4>
+            <div class="stars">Rivers, Nigeria ⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+        <p class="review-content">I joined the PPOS course not knowing anything about affiliate marketing. Within 3 weeks I made my first ₦45,000 on Selar. This is the most practical training I've ever seen 🔥</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar">A</div>
+          <div>
+            <h4>Asante Kante</h4>
+            <div class="stars">Accra, Ghana ⭐⭐⭐</div>
+          </div>
+        </div>
+        <p class="review-content">The PPOS 2.0 upgrade was a game-changer for me. But i don't like the fact that it's under-priced.😕 I know Mr Wellington wants to help everyone but at least raising the price a bit shows the worth of this upgrade ✨.</p>
+      </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="avatar">E</div>
+        <div>
+          <h4>Emmanuel Abbey</h4>
+          <div class="stars">Port Harcourt, Nigeria ⭐⭐⭐⭐</div>
+        </div>
+      </div>
+      <p class="review-content">I've tried many online business courses but this one actually showed me step by step how to get my first sale. Especially the part where you learn how to automate sales it's gold ngl 🥇.</p>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="avatar">S</div>
+        <div>
+          <h4>Shedrach Dane</h4>
+          <div class="stars">Ibadan, Nigeria ⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+      <p class="review-content">The strategies taught in this course are practical and easy to implement; Even the automation series omo. I recently even made my first automated sale not long ago.😁 Shoutout to Digital Wellington and his PPOS 2.0 upgrade!</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="avatar">M</div>
+          <div>
+            <h4>Michael Andrew</h4>
+            <div class="stars">Kumasi, Ghana ⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+        <p class="review-content">Honestly i didn't expect the 2.0 upgrade to be this enlightening. I mean, the detailed explanation plus real time visual experience shared. Also, the 24/7 support from Digital Wellington is also amazing! Not to talk of the affordable price that the whole course has.</p>
+      </div>
+      </div>
+  </section>
+
+  <section style="background-color: #111111; padding: 60px 20px; color: #ffffff; line-height: 1.8; font-family: 'Georgia', serif; border-top: 1px solid #333; border-bottom: 1px solid #333;">
+    <div style="max-width: 700px; margin: 0 auto;">
+        <p style="font-size: 1.3rem; color: #e91e63; font-weight: bold; margin-bottom: 30px; font-family: sans-serif;">Before you leave this page...</p>
+        <p style="margin-bottom: 25px; color: #ffffff;">There’s one more thing I’d like to say...</p>
+        <p style="margin-bottom: 25px; color: #ffffff;">You see, before I discovered Digital marketing (... and started making money with it...)</p>
+        <p style="margin-bottom: 25px; color: #ffffff;">A lot of people didn’t take me seriously .... And almost everyone who knew me felt like I was wasting my time...</p>
+        <div style="margin-bottom: 25px; border-left: 4px solid #e91e63; padding-left: 20px; font-style: italic; color: #cccccc; background: #1a1a1a; padding-top: 10px; padding-bottom: 10px;">
+            If you’ve ever been ridiculed because “you don’t have money” ... because you don’t have a job... or because you’re still “sitting” in your parent’s house...
+        </div>
+        <p style="margin-bottom: 25px; color: #ffffff;">Then you know it’s a position nobody wants to be in.</p>
+        <p style="margin-bottom: 25px; color: #ffffff;">My story is fairly consistent with the story of many of my students who once struggled (and were once ridiculed...)</p>
+        <p style="margin-bottom: 25px; color: #ffffff;">That you can prove the naysayers wrong.</p>
+        <p style="margin-bottom: 25px; color: #ffffff;">Everyone who now doubts and ridicules you... Even treating you with disrespect ... Simply because things don’t seem to be going well for you just yet (and they think you have no value to your name...)</p>
+        <p style="margin-bottom: 25px; font-weight: bold; color: #ffffff; font-size: 1.1rem;">But then again, a voice keeps telling you things can get better.</p>
+        <p style="margin-bottom: 25px; color: #ffffff;">That same voice brought you here today... And if you’re the kind of person I think you are..</p>
+        <p style="margin-bottom: 25px; color: #ffffff;">Fed up with the things or way your life is moving slowly...</p>
+        <p style="margin-bottom: 25px; color: #e91e63; font-weight: bold; font-size: 1.2rem; text-align: center;">And ready to change your story for good...</p>
+        <p style="margin-bottom: 25px; color: #ffffff; text-align: center;">I want to tell you you’re on the right track.</p>
+        <p style="margin-bottom: 25px; color: #ffffff;">Digital marketing made me grow not only financially, but mentally also.</p>
+        <p style="margin-bottom: 25px; color: #ffffff; text-align: center;">And I believe you too can get that mental fortification where nothing people say bothers you again.</p>
+        <p style="margin-bottom: 10px; color: #ffffff; text-align: center; font-size: 1.4rem; font-weight: bold;">But that can only happen when you decide to stop stalling and GET THIS COURSE.</p>
+    </div>
+</section>
+
+  <!-- CTA / PRICING -->
+  <section id="pricing" class="section">
+    <h2 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Ready to Start?</h2>
+    <p style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Launch offer: ₦10,000. For full access to every blueprint, resource, and bonus inside the mentorship program. Learn how to Automate your sales as an online marketer with just ₦10,000 and exit the concept of manual labor</p>
+    <a href="https://selar.com/ppos2"><button class="cta-btn" onclick="shift()">Click here to get started</button></a>
+  </section>
+
+  <p style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Note: Price increases to ₦25,000 soon</p>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Digital Wellington – The Pinnacle Path to Online Success (PPOS) 2.0</p>
+  </footer>
+
+  <div id="social-proof-popup" class="popup-hidden">
+    <div class="check-icon">✓</div>
+    <div>
+      <p id="popup-name"><b>Ochuko from Lagos</b></p>
+      <p id="popup-text">Just Purchased the PPOS 2.0 course</p>
+      <small id="popup-time">1 minute ago</small>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" aria-label="Back to top">↑</button>
+
+  <script>
+     const toggle = document.getElementById('themeToggle');
+
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+
+      // Change icon
+      if (document.body.classList.contains('dark-mode')) {
+        toggle.textContent = "dark_mode";
+      } else {
+        toggle.textContent = "light_mode";
+      }
+    });
+
+    let spotsClaimed = 72;
+    const names = [
+        "Ochuko from Lagos", "Chidi from Port Harcourt", "Abubakar from Abuja", 
+        "Blessing from Benin", "Kelechi from Owerri", "Amina from Kano",
+        "Tunde from Ibadan", "Emeka from Enugu", "Fatima from Kaduna",
+        "Efe from Warri", "Sade from Akure", "Kwesi from Accra",
+        "Nneka from Onitsha", "Musa from Jos", "Adaeze from Awka"
+    ];
+
+    function updateSocialProof() {
+        const popup = document.getElementById('social-proof-popup');
+        const nameDisplay = document.getElementById('popup-name');
+        const claimedDisplay = document.getElementById('spots-claimed');
+        const leftDisplay = document.getElementById('spots-left');
+
+        if(spotsClaimed < 198) { // Stop just before 200 to keep it realistic
+            spotsClaimed++;
+            claimedDisplay.innerText = spotsClaimed;
+            leftDisplay.innerText = 200 - spotsClaimed;
+
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            nameDisplay.innerHTML = `<b>${randomName}</b>`;
+            
+            popup.classList.remove('popup-hidden');
+            popup.classList.add('popup-visible');
+
+            setTimeout(() => {
+                popup.classList.remove('popup-visible');
+                popup.classList.add('popup-hidden');
+            }, 8000);
+        }
+    }
+    
+    // Initialize logic
+    setInterval(updateSocialProof, 50000); // Every 50 seconds
+    setTimeout(updateSocialProof, 15000);   // First one after 15 seconds
+    
+    function shift() { console.log("Redirecting to payment..."); }
+
+    // ===== Scroll Reveal Animations =====
+const reveals = document.querySelectorAll(".fade-up, .slide-in-left, .slide-in-right, .slide-in-up");
+
+function revealOnScroll() {
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const revealTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 100;
+
+    if (revealTop < windowHeight - revealPoint) {
+      reveals[i].classList.add("visible");
+    }
+  }
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
+// ===== Back to Top Button =====
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTop.style.display = "flex";
+  } else {
+    backToTop.style.display = "none";
+  }
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+function Affiliate() {
+    alert("Start Automating Your Sales Today!")
+}
+function shift() {
+  alert("Learn How to Become a Profitable Digital Marketer Today!")
+}
+
+light.addEventListener("click", function Light_Mode() {
+    body.style.backgroundColor = "white";
+    body.style.color = "black";
+})
+
+dark.addEventListener("click", function Dark_Mode() {
+    body.style.backgroundColor = "Black";
+    body.style.color = "white";
+})
+
+light.addEventListener("click", function LightMode() {
+    body.style.backgroundColor = "white";
+    body.style.color = "red";
+})
+    </script>
+</body>
+</html>
