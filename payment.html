@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get the PPOS course</title>
+    <style>
+        body { font-family: sans-serif; background-color: #111; color: #fff; text-align: center; padding: 40px 20px; }
+        .container { max-width: 500px; margin: 0 auto; background: #1a1a1a; padding: 30px; border-radius: 20px; border: 1px solid #333; }
+        .price { font-size: 2.5rem; color: #e91e63; font-weight: bold; margin: 20px 0; }
+        .account-box { background: #000; padding: 20px; border-radius: 10px; border: 1px dashed #e91e63; margin: 20px 0; position: relative; }
+        .copy-btn { background: #e91e63; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 0.8rem; margin-top: 10px; }
+        #success-btn { 
+            display: none; /* Hidden by default */
+            background: #25d366; color: #fff; text-decoration: none; 
+            padding: 20px; border-radius: 10px; font-weight: bold; 
+            font-size: 1.2rem; margin-top: 30px; display: none; 
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .timer-text { color: #888; font-size: 0.9rem; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Final Step: Secure Your Spot</h2>
+        <p>Make a transfer of exactly:</p>
+        <div class="price">₦10,000</div>
+
+        <div class="account-box">
+            <p style="margin: 0; color: #aaa;">Bank Name:</p>
+            <h3 style="margin: 5px 0;">Kuda</h3> <p style="margin: 15px 0 0; color: #aaa;">Account Number:</p>
+            <h3 id="acc-num" style="margin: 5px 0; font-size: 1.8rem; letter-spacing: 2px;">2082636117</h3> <p style="margin: 15px 0 0; color: #aaa;">Account Name:</p>
+            <h3 style="margin: 5px 0;">WELLINGTON, ORUSOSO</h3> <button class="copy-btn" onclick="copyAccount()">Click to Copy Account Number</button>
+        </div>
+
+        <p style="color: #ff0000; font-size: 0.9rem;">⚠️ Kindly take a screenshot of your receipt after payment.</p>
+
+        <a id="success-btn" href="https://wa.link/m36uaj">
+          Payment Successful?✅ (CLICK TO GAIN ACCESS)
+        </a>3MXXC    
+
+        <p id="wait-msg" class="timer-text">The "Payment Successful" button will appear in <span id="timer">1:00</span>...</p>
+    </div>
+
+    <script>
+        // 1. Copy to Clipboard Function
+        function copyAccount() {
+            const accNum = document.getElementById('acc-num').innerText;
+            navigator.clipboard.writeText(accNum);
+            alert("Account Number Copied: " + accNum);
+        }
+
+        // 2. 2-Minute Timer Logic
+        let secondsLeft = 60; // 1 minute
+        const timerDisplay = document.getElementById('timer');
+        const successBtn = document.getElementById('success-btn');
+        const waitMsg = document.getElementById('wait-msg');
+
+        const countdown = setInterval(() => {
+            secondsLeft--;
+            let mins = Math.floor(secondsLeft / 60);
+            let secs = secondsLeft % 60;
+            timerDisplay.innerText = mins + ":" + (secs < 10 ? "0" : "") + secs;
+
+            if (secondsLeft <= 0) {
+                clearInterval(countdown);
+                waitMsg.style.display = "none"; // Hide the "Wait" message
+                successBtn.style.display = "inline-block"; // Show the button
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
